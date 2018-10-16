@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<style>
+body {
+background-color:#8AB65B;
+}
+h1 {
+color:#D1D867;
+align:centre;
+}
+</style>
+</head>
+<body>
+<h1>HCMS - HR Bot</h1>
+<p id="info"></p>
+</body>
+<link href="https://api.motion.ai/sdk/webchat.css" rel="stylesheet" type="text/css">
+<script src="https://api.motion.ai/sdk/webchat.js"></script>
+<script type="text/javascript" language="javascript">
+
+    var urlvariable = "666";
+    URL = "https://demo7986370.mockable.io/employee?id=" + urlvariable;
+	
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", URL, false);
+    xmlhttp.send(null);
+	
+    document.getElementById("info").innerHTML = xmlhttp.responseText;
+	
+	
+	//var response = xmlhttp.responseText;
+	
+	//var obj = JSON.parse(response);
+	var emp_id = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ";
+	
+	var querystring = '72724?token=44649438b4a0cae5fee9f6c4f8ee5f3a&ref='+emp_id;
+	
+	/*
+	var obj = JSON.parse(response);
+	var emp_info = JSON.stringify(response);
+	alert(emp_info);
+    var encoded_info = encodeURI(emp_info);
+    alert(encoded_info);
+	*/
+	
+   	motionAI_Init(querystring,true);
+    motionAI_Open();
+</script>
+</html>
